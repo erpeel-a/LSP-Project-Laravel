@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect(route('karyawan'));
+    return redirect(route('karyawan.index'));
 });
 
 Route::resources([
