@@ -6,7 +6,7 @@
                 Form Tambah Karyawan
             </div>
             <div class="card-body">
-                <form action="{{ route('update.karyawan', $karyawan->id) }}" method="POST">
+                <form action="{{ route('karyawan.update', $karyawan->id) }}" method="POST">
                     @method('PUT')
                     @csrf
                     <div class="mb-3 row">

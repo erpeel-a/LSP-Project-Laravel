@@ -6,7 +6,7 @@
             {{ session('status') }}
         </div>
         @endif
-        <a href="{{ route('create.golongan') }}" class="btn btn-primary mb-3">Tambah</a>
+        <a href="{{ route('golongan.create') }}" class="btn btn-primary mb-3">Tambah</a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -25,8 +25,8 @@
                         <td>{{ $item->gaji_pokok }}</td>
                         <td>{{ $item->tunjangan }}</td>
                         <td class="d-flex">
-                            <a href="{{ route('edit.golongan', Crypt::Encrypt($item->id)) }}" class="btn btn-sm btn-info">Edit</a>
-                            <form action="{{ route('destroy.golongan', $item->id) }}" method="POST">
+                            <a href="{{ route('golongan.edit', Crypt::Encrypt($item->id)) }}" class="btn btn-sm btn-info">Edit</a>
+                            <form action="{{ route('golongan.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>

@@ -6,7 +6,7 @@
                 Form Tambah Golongan
             </div>
             <div class="card-body">
-                <form action="{{ route('store.golongan') }}" method="POST">
+                <form action="{{ route('golongan.store') }}" method="POST">
                     @method('POST')
                     @csrf
                     <div class="mb-3 row">

@@ -39,7 +39,7 @@ class GolonganController extends Controller
             'gaji_pokok' => $request->gaji_pokok,
             'tunjangan' => $request->tunjangan,
         ]);
-        return redirect(route('golongan'))->with('status', 'Data golongan berhasil ditambahkan');
+        return redirect(route('golongan.index'))->with('status', 'Data golongan berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -65,12 +65,12 @@ class GolonganController extends Controller
             'gaji_pokok' => $request->gaji_pokok,
             'tunjangan' => $request->tunjangan,
         ]);
-        return redirect(route('golongan'))->with('status', 'Data golongan berhasil diedit');
+        return redirect(route('golongan.index'))->with('status', 'Data golongan berhasil diedit');
     }
 
     public function destroy($id)
     {
         Gaji::destroy($id);
-        return redirect(route('golongan'))->with('status', 'Data golongan berhasil dihapus');
+        return redirect(route('golongan.index'))->with('status', 'Data golongan berhasil dihapus');
     }
 }

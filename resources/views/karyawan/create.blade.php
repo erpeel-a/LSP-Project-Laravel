@@ -6,7 +6,8 @@
                 Form Tambah Karyawan
             </div>
             <div class="card-body">
-                <form action="{{ route('store.karyawan') }}" method="POST">
+                @if ($jmlGolongan > 0)
+                <form action="{{ route('karyawan.store') }}" method="POST">
                     @method('POST')
                     @csrf
                     <div class="mb-3 row">
@@ -114,6 +115,11 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                @else
+                <div class="alert alert-danger" role="alert">
+                    Data golongan kosong. Silahkan input data golongan.
+                </div>
+                @endif
             </div>
         </div>
     </div>

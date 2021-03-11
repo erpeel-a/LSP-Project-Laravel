@@ -23,6 +23,7 @@ class KaryawanController extends Controller
         $data = [
             'title' => 'Tambah Karyawan',
             'golongan' => Gaji::get(),
+            'jmlGolongan' => Gaji::count(),
         ];
         return view('karyawan.create', $data);
     }
@@ -48,7 +49,7 @@ class KaryawanController extends Controller
             'gaji_id' => $request->gaji_id,
             'status' => $request->status,
         ]);
-        return redirect(route('karyawan'))->with('status', 'Data karyawan berhasil ditambahkan');
+        return redirect(route('karyawan.index'))->with('status', 'Data karyawan berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -82,12 +83,12 @@ class KaryawanController extends Controller
             'gaji_id' => $request->gaji_id,
             'status' => $request->status,
         ]);
-        return redirect(route('karyawan'))->with('status', 'Data karyawan berhasil diubah');
+        return redirect(route('karyawan.index'))->with('status', 'Data karyawan berhasil diubah');
     }
 
     public function destroy($id)
     {
         Karyawan::destroy($id);
-        return redirect(route('karyawan'))->with('status', 'Data karyawan berhasil dihapus');
+        return redirect(route('karyawan.index'))->with('status', 'Data karyawan berhasil dihapus');
     }
 }

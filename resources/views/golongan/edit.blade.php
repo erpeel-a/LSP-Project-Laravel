@@ -6,7 +6,7 @@
                 Form Edit Golongan
             </div>
             <div class="card-body">
-                <form action="{{ route('update.golongan', $golongan->id) }}" method="POST">
+                <form action="{{ route('golongan.update', $golongan->id) }}" method="POST">
                     @method('PUT')
                     @csrf
                     <div class="mb-3 row">

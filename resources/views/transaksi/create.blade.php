@@ -6,7 +6,8 @@
                 Form Tambah Transaksi
             </div>
             <div class="card-body">
-                <form action="{{ route('store.transaksi') }}" method="POST">
+                @if ($jmlKaryawan > 0)
+                <form action="{{ route('transaksi.store') }}" method="POST">
                     @method('POST')
                     @csrf
                     <div class="mb-3 row">
@@ -63,6 +64,11 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                @else
+                <div class="alert alert-danger" role="alert">
+                    Data karyawan kosong. Silahkan input data karyawan.
+                </div>
+                @endif
             </div>
         </div>
     </div>

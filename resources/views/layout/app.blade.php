@@ -19,9 +19,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="{{ route('karyawan') }}">Karyawan</a>
-                        <a class="nav-link" href="{{ route('golongan') }}">Golongan</a>
-                        <a class="nav-link" href="{{ route('transaksi') }}">Transaksi</a>
+                        <a class="nav-link" href="{{ route('karyawan.index') }}">Karyawan</a>
+                        <a class="nav-link" href="{{ route('golongan.index') }}">Golongan</a>
+                        <a class="nav-link" href="{{ route('transaksi.index') }}">Transaksi</a>
                     </div>
                 </div>
             </div>

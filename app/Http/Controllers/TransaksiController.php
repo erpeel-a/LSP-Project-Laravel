@@ -23,6 +23,7 @@ class TransaksiController extends Controller
         $data = [
             'title' => 'Tambah transaksi',
             'karyawan' => Karyawan::get(),
+            'jmlKaryawan' => Karyawan::count(),
         ];
         return view('transaksi.create', $data);
     }
@@ -46,7 +47,7 @@ class TransaksiController extends Controller
             'lembur' => $request->lembur,
             'gaji_total' => $gaji_total,
         ]);
-        return redirect(route('transaksi'))->with('status', 'Data transaksi berhasil ditambahkan');
+        return redirect(route('transaksi.index'))->with('status', 'Data transaksi berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -79,12 +80,12 @@ class TransaksiController extends Controller
             'lembur' => $request->lembur,
             'gaji_total' => $gaji_total,
         ]);
-        return redirect(route('transaksi'))->with('status', 'Data transaksi berhasil diubah');
+        return redirect(route('transaksi.index'))->with('status', 'Data transaksi berhasil diubah');
     }
 
     public function destroy($id)
     {
         Transaksi::destroy($id);
-        return redirect(route('transaksi'))->with('status', 'Data transaksi berhasil dihapus');
+        return redirect(route('transaksi.index'))->with('status', 'Data transaksi berhasil dihapus');
     }
 }

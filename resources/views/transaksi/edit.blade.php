@@ -6,7 +6,7 @@
                 Form Edit Transaksi
             </div>
             <div class="card-body">
-                <form action="{{ route('update.transaksi', $transaksi->id) }}" method="POST">
+                <form action="{{ route('transaksi.update', $transaksi->id) }}" method="POST">
                     @method('PUT')
                     @csrf
                     <div class="mb-3 row">
